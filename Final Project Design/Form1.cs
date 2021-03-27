@@ -290,6 +290,14 @@ namespace Final_Project_Design
                 else if (scene == 78) { }
                 else if (scene == 79) { }
                 else if (scene == 80) { }
+
+            }
+            else if (e.KeyCode == Keys.Space)
+            {
+                if (scene == 2)
+                {
+                    text++;
+                }
             }
 
             switch (scene)
@@ -302,10 +310,30 @@ namespace Final_Project_Design
                     imageLabel.Text = "";
                     break;
                 case 2:
-                    subTitleLabel.Text = "The year is 2140, 10 years after Earth has been wiped out and is now uninhabitable.";
-                    aLabel.Text = "Continue";
-                    sLabel.Text = "";
-                    dLabel.Text = "";
+                    if (text == 1)
+                    {
+                        subTitleLabel.Text = "The year is 2140, 10 years after Earth has been wiped out and is now uninhabitable.";
+                        aLabel.Text = "";
+                        sLabel.Text = "";
+                        dLabel.Text = "";
+                    }
+                    if (text == 2)
+                    {
+                        subTitleLabel.Text = "This has forced the few remaining survivors of The Incident to retreat onto a spaceship known as Odysseus and abandon the planet.";
+                    }
+                    if (text == 3)
+                    {
+                        subTitleLabel.Text = "The colonists onboard are on route to a new planet that they have been researching for years in a far off galaxy.";
+                    }
+                    if (text == 4)
+                    {
+                        subTitleLabel.Text = "There were supposed rumors of a research crew that were sent to check out the planet years before The Incident.";
+                    }
+                    if (text == 5)
+                    {
+                        subTitleLabel.Text = "You are the colonists, hoping to survive the terrible endeavors of space and make it to the planet to start a new life. Will you make it?";
+                        text = 1;
+                    }
                     break;
                 case 3:
                     subTitleLabel.Text = "7:30 am, Captain Alexander Leon, captains quarters.\nYou awake to the sound of your alarm. You are in your quarters still in bed while your personal HUD reads off the schedule for job assignments for the day.";
@@ -399,54 +427,81 @@ namespace Final_Project_Design
                     break;
                 case 18:
                     subTitleLabel.Text = "Send a message saying that we refuse to give up this item they speak of.";
-                    aLabel.Text = "Continue";
+                    aLabel.Text = "";
                     sLabel.Text = "";
                     dLabel.Text = "";
                     break;
                 case 19:
                     subTitleLabel.Text = "Remembering the conversation you had with Sarah, you pull out your HUD and make an announcement to the worker robots on board.";
-                    aLabel.Text = "Continue";
+                    aLabel.Text = "";
                     sLabel.Text = "";
                     dLabel.Text = "";
                     break;
                 case 20:
                     subTitleLabel.Text = "You get an alert on your HUD that the anomoly in cargo bay has been found.";
-                    aLabel.Text = "Continue";
+                    aLabel.Text = "";
                     sLabel.Text = "";
                     dLabel.Text = "";
                     break;
                 case 21:
                     subTitleLabel.Text = "Open it.";
-                    aLabel.Text = "Continue";
+                    aLabel.Text = "";
                     sLabel.Text = "";
                     dLabel.Text = "";
                     break;
                 case 22:
                     subTitleLabel.Text = "You quickly move out of the way and the thing jumps past you.";
-                    aLabel.Text = "Continue";
+                    aLabel.Text = "";
                     sLabel.Text = "";
                     dLabel.Text = "";
                     break;
                 case 23:
                     subTitleLabel.Text = "The thing jumps right on your face and begins to squeeze. You can feel your skull being crushed as your vision begins to fade. Captain Alexander Leon is dead.";
-                    aLabel.Text = "Continue";
+                    aLabel.Text = "";
                     sLabel.Text = "";
                     dLabel.Text = "";
                     player1State = "dead";
                     break;
                 case 24:
                     subTitleLabel.Text = "10:00 am, First Officer Alex Sarichith, the bridge.\nYou are at the bridge awaiting the Captain when security comes into the room.";
-                    aLabel.Text = "Continue";
+                    aLabel.Text = "";
                     sLabel.Text = "";
                     dLabel.Text = "";
                     break;
                 case 25:
                     subTitleLabel.Text = "Put it back in the egg!";
-                    aLabel.Text = "Continue";
+                    aLabel.Text = "";
                     sLabel.Text = "";
                     dLabel.Text = "";
                     break;
-                    
+                case 26:
+                    subTitleLabel.Text = "Kill it!";
+                    aLabel.Text = "";
+                    sLabel.Text = "";
+                    dLabel.Text = "";
+                    break;
+                case 27:
+                    subTitleLabel.Text = "You decide not to as it probably make things worse. You eject the egg and the ship begins to take off. Just then you recieve another message.";
+                    aLabel.Text = "";
+                    sLabel.Text = "";
+                    dLabel.Text = "";
+                    break;
+                case 28:
+                    subTitleLabel.Text = "The alien ship doesn't go away, but instead another message is sent.";
+                    aLabel.Text = "";
+                    sLabel.Text = "";
+                    dLabel.Text = "";
+                    break;
+                case 29:
+                    subTitleLabel.Text = "The alien ship begins to fly, but then suddenly it explodes. The explosion wasn't enough to damage your ship, but you felt a bit of rocking from it.";
+                    aLabel.Text = "";
+                    sLabel.Text = "";
+                    dLabel.Text = "";
+                    break;
+                case 30:
+
+
+
 
 
             }
