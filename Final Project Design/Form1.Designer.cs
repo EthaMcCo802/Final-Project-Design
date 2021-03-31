@@ -128,6 +128,7 @@ namespace Final_Project_Design
             this.imageLabel.Size = new System.Drawing.Size(426, 432);
             this.imageLabel.TabIndex = 7;
             this.imageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.imageLabel.Click += new System.EventHandler(this.imageLabel_Click);
             // 
             // subTitleLabel
             // 
@@ -137,6 +138,8 @@ namespace Final_Project_Design
             this.subTitleLabel.Name = "subTitleLabel";
             this.subTitleLabel.Size = new System.Drawing.Size(401, 118);
             this.subTitleLabel.TabIndex = 8;
+            this.subTitleLabel.Text = "Press start to begin";
+            this.subTitleLabel.Click += new System.EventHandler(this.subTitleLabel_Click);
             // 
             // Form1
             // 
@@ -155,6 +158,7 @@ namespace Final_Project_Design
             this.Controls.Add(this.titleLabel);
             this.Name = "Form1";
             this.Text = "Voyagers";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
