@@ -169,15 +169,17 @@ namespace Final_Project_Design
             this.imageLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.imageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imageLabel.ForeColor = System.Drawing.Color.White;
-            this.imageLabel.Location = new System.Drawing.Point(-2, 0);
+            this.imageLabel.Location = new System.Drawing.Point(-1, 0);
             this.imageLabel.Name = "imageLabel";
             this.imageLabel.Size = new System.Drawing.Size(426, 450);
             this.imageLabel.TabIndex = 7;
             this.imageLabel.Text = "\r\n";
             this.imageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.imageLabel.Visible = false;
             // 
             // imageBox
             // 
+            this.imageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imageBox.Location = new System.Drawing.Point(3, 0);
             this.imageBox.Name = "imageBox";
             this.imageBox.Size = new System.Drawing.Size(421, 450);

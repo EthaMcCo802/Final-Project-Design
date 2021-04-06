@@ -178,6 +178,7 @@ namespace Final_Project_Design
                     subTitleLabel.Visible = true;
                     characterLabel.Visible = true;
                     imageLabel.Visible = false;
+                    imageBox.Visible = false;
                     characterLabel.Text = "";
                     subTitleLabel.Text = "Press start to begin";
                     aLabel.Text = "Start";
@@ -194,6 +195,7 @@ namespace Final_Project_Design
                         sLabel.Text = "";
                         dLabel.Text = "";
                         spaceShipBox.Visible = true;
+                        imageBox.Visible = true;
                        
                     }
                     if (text == 2)
@@ -233,7 +235,6 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "IRIS";
                         subTitleLabel.Text = "Good morning Captain. The time is currently 7:30 am. Shall I make you breakfast?";
-                        imageBox.BackgroundImage = Properties.Resources.Captain_quarters;
                         aLabel.Text = "Say yes";
                         sLabel.Text = "Say no";
                         text = 1;
@@ -252,6 +253,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "With that, IRIS dissapears. You get dressed in your uniform and exit your room.";
+                        imageBox.BackgroundImage = Properties.Resources.Captain_quarters;
                     }
                     if (text == 3)
                     {
@@ -266,10 +268,11 @@ namespace Final_Project_Design
                     if (text == 5)
                     {
                         characterLabel.Text = "";
-                        subTitleLabel.Text = "You decide it is time to start the day. You exit your quarters and are greeting by Alex Sarichith, the First Officer.";
+                        subTitleLabel.Text = "You decide it is time to start the day. You exit your quarters and are greeted by Alex Sarichith, the First Officer.";
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        imageBox.BackgroundImage = Properties.Resources.hallway;
                         text = 0;
                         scene = 6;
                     }
@@ -287,6 +290,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "With that, IRIS dissapears. You get dressed in your uniform and exit your room.";
+                        imageBox.BackgroundImage = Properties.Resources.Captain_quarters;
                     }
                     if (text == 3)
                     {
@@ -306,10 +310,11 @@ namespace Final_Project_Design
                     if (text == 6)
                     {
                         characterLabel.Text = "";
-                        subTitleLabel.Text = "You decide it is time to start the day. You exit your quarters and are greeting by Alex Sarichith, the First Officer.";
+                        subTitleLabel.Text = "You decide it is time to start the day. You exit your quarters and are greeted by Alex Sarichith, the First Officer.";
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        imageBox.BackgroundImage = Properties.Resources.hallway;
                         text = 0;
                         scene = 6;
                     }
@@ -336,6 +341,7 @@ namespace Final_Project_Design
                         subTitleLabel.Text = "Once on the bridge everyone stands up and salutes. You wave and they sit back down, continuing what they were doing.";
                         aLabel.Text = "Talk to Alex";
                         sLabel.Text = "Start giving orders";
+                        imageBox.BackgroundImage = Properties.Resources.bridge;
                         text = 1;
                     }
                     break;
@@ -371,7 +377,7 @@ namespace Final_Project_Design
                     if (text == 6)
                     {
                         characterLabel.Text = "";
-                        subTitleLabel.Text = "With that, you leave the bridge and head to engineering bay.";
+                        subTitleLabel.Text = "With that, you leave the bridge and head to the engineering bay.";
                     }
                     if (text == 7)
                     {
@@ -380,6 +386,7 @@ namespace Final_Project_Design
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         text = 0;
                         scene = 10;
                     }
@@ -540,6 +547,7 @@ namespace Final_Project_Design
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        imageBox.BackgroundImage = Properties.Resources.bridge;
                         text = 0;
                         scene = 13;
                     }
@@ -575,6 +583,7 @@ namespace Final_Project_Design
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        imageBox.BackgroundImage = Properties.Resources.bridge;
                         text = 0;
                         scene = 13;
                     }
@@ -1135,6 +1144,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "The sight on the feed makes your jaw drop as there appears to be another ship behind yours, although this one looks like nothing you've ever seen before. Just then the feed on the pod gets cut and you're left in shock.";
+                        imageBox.BackgroundImage = Properties.Resources.alien_ship;
                     }
                     if (text == 6)
                     {

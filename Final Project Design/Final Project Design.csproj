@@ -95,5 +95,35 @@
   <ItemGroup>
     <None Include="Resources\Captain quarters.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hallway.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bridge.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engineering bay.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Main area.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maintenance.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maintenance hall.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cargo bay.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alien ship.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
