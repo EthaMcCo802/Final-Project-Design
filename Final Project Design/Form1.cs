@@ -31,6 +31,12 @@ namespace Final_Project_Design
         int text = 1;
 
         Random randGen = new Random();
+
+        int qTCounter = 0;
+
+        bool nKeyDown = false;
+        bool tKeyDown = false;
+        bool wKeyDown = false;
         public Form1()
         {
             InitializeComponent();
@@ -39,6 +45,18 @@ namespace Final_Project_Design
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.N)
+            {
+                nKeyDown = true;
+            }
+            if (e.KeyCode == Keys.T)
+            {
+                tKeyDown = true;
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                wKeyDown = true;
+            }
             if (e.KeyCode == Keys.A) //Blue button
             {
                 if (scene == 1) { scene = 2; }
@@ -65,6 +83,7 @@ namespace Final_Project_Design
                 else if (scene == 33) { scene = 35; }
                 else if (scene == 36) { scene = 41; }
                 else if (scene == 37) { scene = 60; }
+                else if (scene == 39) { scene = 44; }
                 else if (scene == 40) { scene = 42; }
                 else if (scene == 41)
                 {
@@ -81,7 +100,7 @@ namespace Final_Project_Design
                 else if (scene == 49) { scene = 51; }
                 else if (scene == 58) { scene = 60; }
                 else if (scene == 62) { scene = 65; }
-                else if (scene == 76) { scene = 77; }
+                else if (scene == 76) { scene = 78; }
                 else if (scene == 79)
                 {
 
@@ -97,7 +116,11 @@ namespace Final_Project_Design
                 else if (scene == 80) { scene = 1; }
                 else if (scene == 81) { scene = 1; }
                 else if (scene == 82) { scene = 44; }
-                else if (scene == 83) { scene = 40; }
+                else if (scene == 83)
+                {
+                    if (choice2 == true) { scene = 39; }
+                    else { scene = 40; }
+                }
             }
             else if (e.KeyCode == Keys.S) //Red button
             {
@@ -135,7 +158,7 @@ namespace Final_Project_Design
                 else if (scene == 57) { scene = 61; }
                 else if (scene == 58) { scene = 61; }
                 else if (scene == 62) { scene = 64; }
-                else if (scene == 76) { scene = 78; }
+                else if (scene == 76) { scene = 77; }
                 else if (scene == 79) { scene = 27; }
                 else if (scene == 81) { this.Close(); }
                 else if (scene == 82) { scene = 43; }
@@ -196,7 +219,7 @@ namespace Final_Project_Design
                         dLabel.Text = "";
                         spaceShipBox.Visible = true;
                         imageBox.Visible = true;
-                       
+
                     }
                     if (text == 2)
                     {
@@ -208,12 +231,12 @@ namespace Final_Project_Design
                     }
                     if (text == 4)
                     {
-                        subTitleLabel.Text = "There were supposed rumorsof a research crew that were sent to check out the planet years before The Incident.";
+                        subTitleLabel.Text = "There were supposed rumors of a research crew that were sent to check out the planet years before The Incident.";
                     }
                     if (text == 5)
                     {
                         subTitleLabel.Text = "You are the colonists, hoping to survive the terrible endeavors of space and make it to the planet to start a new life. Will you make it?";
-                    } 
+                    }
                     if (text == 6)
                     {
                         subTitleLabel.Text = "7:30 am, Captain Alexander Leon, captains quarters.\nYou awake to the sound of your alarm. You are in your quarters still in bed while your personal HUD reads off the schedule for job assignments for the day.";
@@ -838,6 +861,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You follow the robot to cargo bay where a group of robots are crowded around an item. They clear room for you to see it.";
+                        imageBox.BackgroundImage = Properties.Resources.Cargo_bay;
                     }
                     if (text == 6)
                     {
@@ -864,6 +888,7 @@ namespace Final_Project_Design
                         aLabel.Text = "Keep the item";
                         sLabel.Text = "Give it back.";
                         dLabel.Text = "Get security to open it.";
+                        imageBox.BackgroundImage = Properties.Resources.Cargo_bay;
                         text = 1;
                     }
                     break;
@@ -891,6 +916,9 @@ namespace Final_Project_Design
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Suddenly something jumps out at you.";
                         qT = true;
+                        imageBox.Visible = false;
+                        imageLabel.Visible = true;
+                        imageLabel.Text = "PRESS N";
                         text = 1;
                     }
                     break;
@@ -933,7 +961,8 @@ namespace Final_Project_Design
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
-                        text = 1;
+                        imageBox.BackgroundImage = Properties.Resources.bridge;
+                        text = 0;
                         scene = 24;
                     }
                     break;
@@ -1038,6 +1067,7 @@ namespace Final_Project_Design
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        imageBox.BackgroundImage = Properties.Resources.Security;
                         scene = 32;
                         text = 0;
                     }
@@ -1068,6 +1098,7 @@ namespace Final_Project_Design
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        imageBox.BackgroundImage = Properties.Resources.Security;
                         scene = 32;
                         text = 0;
                     }
@@ -1163,34 +1194,29 @@ namespace Final_Project_Design
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        imageBox.BackgroundImage = Properties.Resources.Security;
                         scene = 32;
                         text = 0;
                     }
                     break;
                 case 32:
-                    if (text == 1)
-                    {
-                        characterLabel.Text = "";
-                        subTitleLabel.Text = " You head outside of the security station into the main area of the ship. Most of the crew is beginning to panic a bit.";
-                        aLabel.Text = "";
-                        sLabel.Text = "";
-                        dLabel.Text = "";
-                        scene = 33;
-                        text = 0;
-                    }
+                    characterLabel.Text = "";
+                    subTitleLabel.Text = " You head outside of the security station into the main area of the ship. Most of the crew is beginning to panic a bit.";
+                    aLabel.Text = "";
+                    sLabel.Text = "";
+                    dLabel.Text = "";
+                    imageBox.BackgroundImage = Properties.Resources.Main_area;
+                    scene = 33;
                     break;
                 case 33:
-                    if (text == 1)
-                    {
-                        characterLabel.Text = "Douglas";
-                        subTitleLabel.Text = "Everything will be fine, remain calm.";
-                        aLabel.Text = "Calm them";
-                        sLabel.Text = "Leave them";
-                        text = 1;
-                    }
+                    characterLabel.Text = "Douglas";
+                    subTitleLabel.Text = "Everything will be fine, remain calm.";
+                    aLabel.Text = "Calm them";
+                    sLabel.Text = "Leave them";
+                    text = 1;
                     break;
                 case 34:
-                    if (scene == 1)
+                    if (text == 1)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You move through the crowded area trying to get to the bridge. The crew seem to panic a bit more now that you're gone, but you ignore them.";
@@ -1201,10 +1227,8 @@ namespace Final_Project_Design
                     if (text == 2)
                     {
                         characterLabel.Text = "";
-                        subTitleLabel.Text = "You reach the bridge where it seems to be even worse. Everyone is in a mass panic. You look around for The Captain and find him trying to turn on his HUD.";
-                        aLabel.Text = "";
-                        sLabel.Text = "";
-                        dLabel.Text = "";
+                        subTitleLabel.Text = "You reach the bridge where it seems to be even worse. Everyone is in a mass panic. You look around for the captain and find him trying to turn on his HUD.";
+                        imageBox.BackgroundImage = Properties.Resources.bridge;
                         text = 0;
                         scene = 36;
                     }
@@ -1233,6 +1257,7 @@ namespace Final_Project_Design
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        imageBox.BackgroundImage = Properties.Resources.bridge;
                         text = 0;
                         scene = 36;
                     }
@@ -1359,6 +1384,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You return back to the main area.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                     }
                     if (text == 8)
                     {
@@ -1399,12 +1425,13 @@ namespace Final_Project_Design
                     if (text == 3)
                     {
                         characterLabel.Text = "";
-                        subTitleLabel.Text = "You nod and leave the deck.";
+                        subTitleLabel.Text = "You nod and leave the bridge.";
                     }
                     if (text == 4)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You return back to the main area.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                     }
                     if (text == 5)
                     {
@@ -1434,6 +1461,7 @@ namespace Final_Project_Design
                 case 40:
                     if (text == 1)
                     {
+                        characterLabel.Text = "Douglas";
                         subTitleLabel.Text = "We could increase security. A bunch of my men are just sitting around doing nothing.";
                         aLabel.Text = "";
                         sLabel.Text = "";
@@ -1447,12 +1475,13 @@ namespace Final_Project_Design
                     if (text == 3)
                     {
                         characterLabel.Text = "";
-                        subTitleLabel.Text = "You nod and leave the deck.";
+                        subTitleLabel.Text = "You nod and leave the bridge.";
                     }
                     if (text == 4)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "There seems to be full on panic ensuing in the main area. Some of the crew are yelling and some of them are beginning to cry.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                     }
                     if (text == 5)
                     {
@@ -1514,6 +1543,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "Douglas";
                         subTitleLabel.Text = "Alright new orders from the Captain, we need to patrol around the entire ship and make sure everything is secure. Since comms are down you'll need to tell any other security personnel of the new orders.";
+                        imageBox.BackgroundImage = Properties.Resources.Security;
                     }
                     if (text == 5)
                     {
@@ -1529,6 +1559,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You think it's best that you stay on the bridge where The Captain is. After waiting some time one of your men come in.";
+                        imageBox.BackgroundImage = Properties.Resources.bridge;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -1552,6 +1583,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "9:45 am, Sarah Mackenzie, engineering bay.\nYou're talking with the Head Researcher Ria Das about the power outage.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -1572,6 +1604,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "While patrolling on the maintenance deck, you hear a loud thud come from one of the closets.";
+                        imageBox.BackgroundImage = Properties.Resources.Maintenance_hall;
                         aLabel.Text = "Investigate";
                         sLabel.Text = "Ignore it";
                         text = 1;
@@ -1590,6 +1623,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "After all the patrols have reported back that the ship is secure, you head to the bridge to notify the Captain.";
+                        imageBox.BackgroundImage = Properties.Resources.bridge;
                     }
                     if (text == 3)
                     {
@@ -1610,6 +1644,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "9:45 am, Sarah Mackenzie, engineering bay.\nYou're talking with the Head Researcher Ria Das about the power outage.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -1635,6 +1670,9 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Just then something jumps out at you.";
+                        imageLabel.Text = "PRESS T";
+                        imageLabel.Visible = true;
+                        imageBox.Visible = false;
                         qT = true;
                         text = 1;
                     }
@@ -1664,8 +1702,6 @@ namespace Final_Project_Design
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
-                        text = 0;
-                        scene = 49;
                     }
                     if (text == 2)
                     {
@@ -1674,6 +1710,7 @@ namespace Final_Project_Design
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         text = 0;
                         scene = 49;
                     }
@@ -1681,48 +1718,40 @@ namespace Final_Project_Design
                 case 49:
                     if (text == 1)
                     {
-                        characterLabel.Text = "";
-                        subTitleLabel.Text = "10:00 am, Head Researcher Ria Das, engineering bay.\nYou are in the repair shop with Sarah.";
-                        aLabel.Text = "";
-                        sLabel.Text = "";
-                        dLabel.Text = "";
-                    }
-                    if (text == 2)
-                    {
                         characterLabel.Text = "Ria";
                         subTitleLabel.Text = "This power outage is really strange, how does the generator just shut down?";
                     }
-                    if (text == 3)
+                    if (text == 2)
                     {
                         characterLabel.Text = "Sarah";
                         subTitleLabel.Text = "I don't know, it's weird, the generator wouldn't just shut down like this, it's built to last.";
                     }
-                    if (text == 4)
+                    if (text == 3)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Suddenly, you hear gun shots coming from the main area.";
                     }
-                    if (text == 5)
+                    if (text == 4)
                     {
                         characterLabel.Text = "Ria";
                         subTitleLabel.Text = "What was that?";
                     }
-                    if (text == 6)
+                    if (text == 5)
                     {
                         characterLabel.Text = "Sarah";
                         subTitleLabel.Text = "I don't know.";
                     }
-                    if (text == 7)
+                    if (text == 6)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Sarah gets up and starts to head towards the door.";
                     }
-                    if (text == 8)
+                    if (text == 7)
                     {
                         characterLabel.Text = "Ria";
                         subTitleLabel.Text = "Where are you going?";
                     }
-                    if (text == 9)
+                    if (text == 8)
                     {
                         characterLabel.Text = "Sarah";
                         subTitleLabel.Text = "To check it out.";
@@ -1765,6 +1794,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You both enter the main area where some security guards are standing around something.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                     }
                     if (text == 3)
                     {
@@ -1795,6 +1825,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You return to the repair room and sit down to think about what just happened. Half an hour passes and the lights turn back on. You feel a wave of relief wash over you, but still dread the situation.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                     }
                     if (text == 9)
                     {
@@ -1824,6 +1855,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Once there you find a mess of dead crewmates and a weird green substance. The crew mates appear to have giant slash marks on their chests and are covered in blood.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -1840,6 +1872,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Once there you find a mess of a weird green substance everywhere.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -1857,6 +1890,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "10:30 am, Head Researcher Ria Das, engineering bay.\nYou are sitting alone in the repair shop waiting for the power to be restored.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -1871,6 +1905,7 @@ namespace Final_Project_Design
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You get a notification on your HUD of a meeting on the bridge. You head there.";
                         text = 0;
+                        scene = 81;
                     }
                     break;
                 case 56:
@@ -1907,12 +1942,13 @@ namespace Final_Project_Design
                     if (text == 6)
                     {
                         characterLabel.Text = "";
-                        subTitleLabel.Text = "You nod and leave the deck.";
+                        subTitleLabel.Text = "You nod and leave the bridge.";
                     }
                     if (text == 7)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You return back to the main area.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                     }
                     if (text == 8)
                     {
@@ -1923,8 +1959,18 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "The Crewmates begin walking back to their quarters calmly and you signal to your men to follow you. With that, you head to engineering bay.";
-                        text = 0;
                         choice3 = true;
+                    }
+                    if (text == 10)
+                    {
+                        characterLabel.Text = "";
+                        subTitleLabel.Text = "9:45 am, Sarah Mackenzie, engineering bay.\nYou're talking with the Head Researcher Ria Das about the power outage.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
+                        aLabel.Text = "";
+                        sLabel.Text = "";
+                        dLabel.Text = "";
+                        text = 0;
+                        scene = 62;
                     }
                     break;
                 case 57:
@@ -1961,7 +2007,8 @@ namespace Final_Project_Design
                     if (text == 6)
                     {
                         characterLabel.Text = "";
-                        subTitleLabel.Text = "You nod and leave the deck.";
+                        subTitleLabel.Text = "You nod and leave the bridge.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                     }
                     if (text == 7)
                     {
@@ -1999,7 +2046,8 @@ namespace Final_Project_Design
                     if (text == 3)
                     {
                         characterLabel.Text = "";
-                        subTitleLabel.Text = "You nod and leave the deck.";
+                        subTitleLabel.Text = "You nod and leave the bridge.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                     }
                     if (text == 4)
                     {
@@ -2037,7 +2085,8 @@ namespace Final_Project_Design
                     if (text == 3)
                     {
                         characterLabel.Text = "";
-                        subTitleLabel.Text = "You nod and leave the deck.";
+                        subTitleLabel.Text = "You nod and leave the bridge.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                     }
                     if (text == 4)
                     {
@@ -2053,8 +2102,18 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "The Crewmates begin walking back to their quarters calmly and you signal to your men to follow you. With that, you head to engineering bay.";
-                        text = 0;
                         choice3 = true;
+                    }
+                    if (text == 7)
+                    {
+                        characterLabel.Text = "";
+                        subTitleLabel.Text = "9:45 am, Sarah Mackenzie, engineering bay.\nYou're talking with the Head Researcher Ria Das about the power outage.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
+                        aLabel.Text = "";
+                        sLabel.Text = "";
+                        dLabel.Text = "";
+                        text = 0;
+                        scene = 62;
                     }
                     break;
                 case 60:
@@ -2086,13 +2145,12 @@ namespace Final_Project_Design
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You and your men head to engineering bay.";
                         choice3 = true;
-                        text = 0;
-                        scene = 61;
                     }
                     if (text == 6)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "9:45 am, Sarah Mackenzie, engineering bay.\nYou're talking with the Head Researcher Ria Das about the power outage.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -2118,6 +2176,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "9:45 am, Sarah Mackenzie, engineering bay.\nYou're talking with the Head Researcher Ria Das about the power outage.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -2128,61 +2187,54 @@ namespace Final_Project_Design
                 case 62:
                     if (text == 1)
                     {
-                        characterLabel.Text = "";
-                        subTitleLabel.Text = "9:45 am, Sarah Mackenzie, engineering bay.\nYou're talking with the Head Researcher Ria Das about the power outage.";
-                        aLabel.Text = "";
-                        sLabel.Text = "";
-                        dLabel.Text = "";
-                    }
-                    if (text == 2)
-                    {
                         characterLabel.Text = "Sarah";
                         subTitleLabel.Text = "This feels wrong. The generator was designed to never just shut down on it's own. So how could this happen?";
                     }
-                    if (text == 3)
+                    if (text == 2)
                     {
                         characterLabel.Text = "Ria";
                         subTitleLabel.Text = "I don't know. Maybe there was a malfunction? I'm not an engineer.";
                     }
-                    if (text == 4)
+                    if (text == 3)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Just then, Douglas and a couple of his men enter into the room.";
                     }
-                    if (text == 5)
+                    if (text == 4)
                     {
                         characterLabel.Text = "Douglas";
                         subTitleLabel.Text = "Alright, new orders from the Captain. You need to gather a team and fix the power. We'll give you an escort there.";
                     }
-                    if (text == 6)
+                    if (text == 5)
                     {
                         characterLabel.Text = "Sarah";
                         subTitleLabel.Text = "Why do we need an escort?";
                     }
-                    if (text == 7)
+                    if (text == 6)
                     {
                         characterLabel.Text = "Douglas";
                         subTitleLabel.Text = "Doesn't matter right now, just get a team together.";
                     }
-                    if (text == 8)
+                    if (text == 7)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You get up to leave and Ria goes to follow.";
                     }
-                    if (text == 9)
+                    if (text == 8)
                     {
                         characterLabel.Text = "Douglas";
                         subTitleLabel.Text = "I think it would be best if you stayed here.";
                     }
-                    if (text == 10)
+                    if (text == 9)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Ria sits back down and you exit the room.";
                     }
-                    if (text == 11)
+                    if (text == 10)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You gather a small team of engineers and head to the maintenance room to fix the power. On the way you hear a loud noise come from one of the closets in the hall.";
+                        imageBox.BackgroundImage = Properties.Resources.Maintenance_hall;
                         aLabel.Text = "Check it out";
                         sLabel.Text = "Send a guard";
                         dLabel.Text = "Ignore it";
@@ -2202,6 +2254,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Everyone seems to agree and you make it to the maintenance room";
+                        imageBox.BackgroundImage = Properties.Resources.maintenance;
                     }
                     if (text == 3)
                     {
@@ -2232,6 +2285,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "10:30 am, Head Researcher Ria Das, engineering bay.\nYou are blinded by the light that emits from the fixture in the room.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -2277,6 +2331,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Once in maintenance, the guards block the door.";
+                        imageBox.BackgroundImage = Properties.Resources.maintenance;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -2307,6 +2362,9 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Just then something slashes at you.";
+                        imageLabel.Text = "PRESS W";
+                        imageLabel.Visible = true;
+                        imageBox.Visible = false;
                         qT = true;
                         text = 1;
                     }
@@ -2405,7 +2463,7 @@ namespace Final_Project_Design
                         sLabel.Text = "";
                         dLabel.Text = "";
                     }
-                    if (text == 1)
+                    if (text == 2)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "10:00 am, Head of Security Douglas Clark, maintenance deck.\nYou quickly aim your sights at the closet.";
@@ -2421,6 +2479,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Once in maintenance, the guards block the door.";
+                        imageBox.BackgroundImage = Properties.Resources.maintenance;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -2474,15 +2533,17 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You manage to fix the wiring in the outlet and the damage done to the cord. Once finished, you plug the cord back into the outlet and start the generator. The generator whirrs to life and the power is restored.";
-                        text = 0;
                     }
-                    if (text == 1)
+                    if (text == 12)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "10:30 am, Head Researcher Ria Das, engineering bay.\nYou are blinded by the light that emits from the fixture in the room.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
+                        text = 0;
+                        scene = 71;
                     }
                     break;
                 case 69:
@@ -2513,6 +2574,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You all run to the maintenance room and barricade the door behind you.";
+                        imageBox.BackgroundImage = Properties.Resources.maintenance;
                         text = 0;
                         scene = 70;
                     }
@@ -2520,43 +2582,47 @@ namespace Final_Project_Design
                 case 70:
                     if (text == 1)
                     {
-                        characterLabel.Text = "";
-                        subTitleLabel.Text = "You all run to the maintenance room and barricade the door behind you.";
-                    }
-                    if (text == 2)
-                    {
                         characterLabel.Text = "Engineer";
                         subTitleLabel.Text = "What was that thing? What's going on?";
                     }
-                    if (text == 3)
+                    if (text == 2)
                     {
                         characterLabel.Text = "Douglas";
                         subTitleLabel.Text = "The Captain called me to the bridge and told me that we're being attacked by aliens or something. This whole siutation is getting out of control.";
                     }
-                    if (text == 4)
+                    if (text == 3)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "The engineers look at you in panic.";
                     }
-                    if (text == 5)
+                    if (text == 4)
                     {
                         characterLabel.Text = "Douglas";
                         subTitleLabel.Text = "Look, all that matters right now is getting the power back up and running.";
                     }
-                    if (text == 6)
+                    if (text == 5)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "They seem to agree and get to it immediately.";
                     }
-                    if (text == 7)
+                    if (text == 6)
                     {
                         characterLabel.Text = "Engineer";
                         subTitleLabel.Text = "Hey, I think I found the problem. This outlet and power cord are broken.";
                     }
-                    if (text == 8)
+                    if (text == 7)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "They manage to fix them both and turn on the generator. It whirrs to life and the power is restored.";
+                    }
+                    if (text == 8)
+                    {
+                        characterLabel.Text = "";
+                        subTitleLabel.Text = "10:30 am, Head Researcher Ria Das, engineering bay.\nYou are blinded by the light that emits from the fixture in the room.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
+                        aLabel.Text = "";
+                        sLabel.Text = "";
+                        dLabel.Text = "";
                         text = 0;
                         scene = 71;
                     }
@@ -2564,18 +2630,10 @@ namespace Final_Project_Design
                 case 71:
                     if (text == 1)
                     {
-                        characterLabel.Text = "";
-                        subTitleLabel.Text = "10:30 am, Head Researcher Ria Das, engineering bay.\nYou are blinded by the light that emits from the fixture in the room.";
-                        aLabel.Text = "";
-                        sLabel.Text = "";
-                        dLabel.Text = "";
-                    }
-                    if (text == 2)
-                    {
                         characterLabel.Text = "Ria";
                         subTitleLabel.Text = "Oh good, the powers back.";
                     }
-                    if (text == 3)
+                    if (text == 2)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You get a notification on your HUD that the Captain has a requested a meeting on the bridge. You head there.";
@@ -2627,6 +2685,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You quickly run away from the scene, up to the bridge where the Navigators are trying to start the ship again. You find the Captain who seems to be talking to someone on his HUD. You approach him immediately.";
+                        imageBox.BackgroundImage = Properties.Resources.bridge;
                     }
                     if (text == 3)
                     {
@@ -2661,6 +2720,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You follow the creature back to the main area. You make it there and find it laying on the ground bleeding some green liquid from the gun wounds.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -2689,6 +2749,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "10:30 am, Head Researcher Ria Das, engineering bay.\nYou are sitting in the repair room with Head Engineer Sarah Mackenzie.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -2701,6 +2762,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You follow the creature back to the main area where it's attacking a crew mate. You take a shot and the creture falls over onto the ground.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -2739,6 +2801,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "10:30 am, Head Researcher Ria Das, engineering bay.\nYou are sitting in the repair room with Head Engineer Sarah Mackenzie.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -2749,58 +2812,51 @@ namespace Final_Project_Design
                 case 76:
                     if (text == 1)
                     {
-                        characterLabel.Text = "";
-                        subTitleLabel.Text = "10:30 am, Head Researcher Ria Das, engineering bay.\nYou are sitting in the repair room with Head Engineer Sarah Mackenzie.";
-                        aLabel.Text = "";
-                        sLabel.Text = "";
-                        dLabel.Text = "";
-                    }
-                    if (text == 2)
-                    {
                         characterLabel.Text = "Ria";
                         subTitleLabel.Text = "This power outage is pretty weird, don't you think?";
                     }
-                    if (text == 3)
+                    if (text == 2)
                     {
                         characterLabel.Text = "Sarah";
                         subTitleLabel.Text = "Yeah, the generator shouldn't just shut down, it's built to withstand running for long periods of time.";
                     }
-                    if (text == 4)
+                    if (text == 3)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Just then Douglas enters into the room.";
                     }
-                    if (text == 5)
+                    if (text == 4)
                     {
                         characterLabel.Text = "Douglas";
                         subTitleLabel.Text = "Ria, you need to come with me, I need to speak with you.";
                     }
-                    if (text == 6)
+                    if (text == 5)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You follow Douglas in confusion. He leads you to the main area where the corpse of some creature lays on the ground. You hold the urge to throw up as the smell coming from the corpse is very pungent.";
+                        imageBox.BackgroundImage = Properties.Resources.Main_area;
                     }
-                    if (text == 7)
+                    if (text == 6)
                     {
                         characterLabel.Text = "Douglas";
                         subTitleLabel.Text = "Have you ever studied anything like this before?";
                     }
-                    if (text == 8)
+                    if (text == 7)
                     {
                         characterLabel.Text = "Ria";
                         subTitleLabel.Text = "No, I've never seen anything like this in my life. It's so...... artificial.";
                     }
-                    if (text == 9)
+                    if (text == 8)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "Looking at the corpse it looks like it has a mechanical suit of armor on, but upon further inspection you think it might be it's skin.";
                     }
-                    if (text == 10)
+                    if (text == 9)
                     {
                         characterLabel.Text = "Douglas";
                         subTitleLabel.Text = "I think you should study this. It might give us some useful information about what kinds of lifeforms there are here.";
                     }
-                    if (text == 11)
+                    if (text == 10)
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You think for a moment. Douglas does have a good point, but you feel very uneasy about being around this thing.";
@@ -2832,6 +2888,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You both head back to engineering bay where Sarah is.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                     }
                     if (text == 5)
                     {
@@ -2869,6 +2926,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You both head back to engineering bay where Sarah is.";
+                        imageBox.BackgroundImage = Properties.Resources.engineering_bay;
                     }
                     if (text == 5)
                     {
@@ -2888,6 +2946,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "You return to the bridge with the item.";
+                        imageBox.BackgroundImage = Properties.Resources.bridge;
                         aLabel.Text = "";
                         sLabel.Text = "";
                         dLabel.Text = "";
@@ -2919,7 +2978,7 @@ namespace Final_Project_Design
                 case 80:
                     characterLabel.Visible = false;
                     imageLabel.Visible = true;
-                    imageLabel.Text = "Creators:\nVoyagers - Ethan McComb\nDesert Void - Joey Gerber\n\nVoice Actors(Order of Appearance):\nAlexander Leon - Ethan McComb\nAlex Sarichith - Charles Sarichith\nSarah Mackenzie - Julia Dowson\nDouglas Clark - Hunter Hansen\nRia Das - Herself\nOthers - Ryan Prosper";
+                    imageLabel.Text = "Creators:\nVoyagers - Ethan McComb\nDesert Void - Joey Gerber\n\nVoice Actors(Order of Appearance):\nAlexander Leon - Ethan McComb\nAlex Sarichith - Charles Sarichith\nSarah Mackenzie - Julia Dowson\nDouglas Clark - Parker Railton\nRia Das - Herself\nOthers - Ryan Prosper";
                     subTitleLabel.Visible = false;
                     aLabel.Text = "Back";
                     sLabel.Text = "";
@@ -2928,6 +2987,7 @@ namespace Final_Project_Design
                 case 81:
                     characterLabel.Text = "";
                     subTitleLabel.Text = "You have completed the first chapter of the Voyagers storyline. Stay tuned for chapter two which will probably come out in a year.";
+                    imageBox.Visible = false;
                     aLabel.Text = "Menu";
                     sLabel.Text = "Exit";
                     dLabel.Text = "";
@@ -2945,6 +3005,7 @@ namespace Final_Project_Design
                     {
                         characterLabel.Text = "";
                         subTitleLabel.Text = "They seem a little suspicious of this, but calm down. You head into the security station.";
+                        imageBox.BackgroundImage = Properties.Resources.Security;
                         text = 0;
                         scene = 62;
                     }
@@ -2974,6 +3035,93 @@ namespace Final_Project_Design
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            if (qT == true)
+            {
+                qTCounter++;
+                if (scene == 21)
+                {
+                    if (qTCounter == 20)
+                    {
+                        scene = 23;
+                        imageBox.Visible = true;
+                        qT = false;
+                        imageLabel.Visible = false;
+                        characterLabel.Text = "";
+                        subTitleLabel.Text = "The thing jumps right on your face and begins to squeeze. You can feel your skull being crushed as your vision begins to fade. Captain Alexander Leon is dead.";
+                        aLabel.Text = "";
+                        sLabel.Text = "";
+                        dLabel.Text = "";
+                    }
+                    else if (nKeyDown == true)
+                    {
+                        scene = 22;
+                        imageBox.Visible = true;
+                        imageLabel.Visible = false;
+                        qT = false;
+                        characterLabel.Text = "";
+                        subTitleLabel.Text = "You quickly move out of the way and the thing jumps past you.";
+                        aLabel.Text = "";
+                        sLabel.Text = "";
+                        dLabel.Text = "";
+                    }
+                }
+                if (scene == 46)
+                {
+                    if (qTCounter == 20)
+                    {
+                        scene = 48;
+                        imageBox.Visible = true;
+                        imageLabel.Visible = false;
+                        qT = false;
+                        subTitleLabel.Text = "You aren't fast enough and the thing slashes at your leg and you fall to the ground. Just then it stabs you in the chest and drags you into the closet. The sound of your men shooting at the creature begin to fade.";
+                        aLabel.Text = "";
+                        sLabel.Text = "";
+                        dLabel.Text = "";
+
+                    }
+                    else if (tKeyDown == true)
+                    {
+                        characterLabel.Text = "";
+                        subTitleLabel.Text = "You quickly get out of the way before the thing can strike you.";
+                        aLabel.Text = "";
+                        sLabel.Text = "";
+                        dLabel.Text = "";
+                        scene = 47;
+                        imageBox.Visible = true;
+                        imageLabel.Visible = false;
+                        qT = false;
+                    }
+                }
+
+                if (scene == 65)
+                {
+                    if (qTCounter == 20)
+                    {
+                        scene = 67;
+                        imageBox.Visible = true;
+                        imageLabel.Visible = false;
+                        qT = false;
+                        characterLabel.Text = "";
+                        subTitleLabel.Text = "You feel a sharp pain in your leg as you fall to the floor. Just then you feel another sharp pain in your chest and you're dragged into the closet.";
+                        aLabel.Text = "";
+                        sLabel.Text = "";
+                        dLabel.Text = "";
+                    }
+                    else if (wKeyDown == true)
+                    {
+                        characterLabel.Text = "";
+                        subTitleLabel.Text = "You quickly jump back as the thing slashes at you.";
+                        aLabel.Text = "";
+                        sLabel.Text = "";
+                        dLabel.Text = "";
+                        scene = 66;
+                        imageBox.Visible = true;
+                        imageLabel.Visible = false;
+                        qT = false;
+                    }
+                }
+                Refresh();
+            }
             if (scene == 2)
             {
                 starsXList.Add(randGen.Next(25, 400 - starSize * 2));
@@ -2993,8 +3141,9 @@ namespace Final_Project_Design
                         break;
                     }
                 }
-                Refresh();
+
             }
+            Refresh();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -3005,7 +3154,23 @@ namespace Final_Project_Design
                 {
                     e.Graphics.FillEllipse(whiteBrush, starsXList[i], starsYList[i], starSize, starSize);
                 }
-            }           
+            }
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.N)
+            {
+                nKeyDown = false;
+            }
+            if (e.KeyCode == Keys.T)
+            {
+                tKeyDown = false;
+            }
+            if (e.KeyCode == Keys.W)
+            {
+                wKeyDown = false;
+            }
         }
     }
 }

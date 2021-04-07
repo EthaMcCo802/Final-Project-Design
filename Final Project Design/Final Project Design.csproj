@@ -125,5 +125,149 @@
   <ItemGroup>
     <None Include="Resources\alien ship.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 9.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 7.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 6.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Charles line 1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 6.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 7.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 8.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 9.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 17.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 18.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 19.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Julia line 20.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 6.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 7.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 8.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 9.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 10.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 11.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 12.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 13.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 14.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 15.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 16.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parker line 17.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
